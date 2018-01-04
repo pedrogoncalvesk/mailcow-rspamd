@@ -26,6 +26,8 @@ COPY settings.conf /etc/rspamd/modules.d/settings.conf
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY tini /sbin/tini
 
+RUN chmod +x /docker-entrypoint.sh /sbin/tini
+
 COPY custom /etc/rspamd/custom
 COPY local.d /etc/rspamd/local.d
 COPY lua /etc/rspamd/lua
