@@ -33,6 +33,8 @@ COPY local.d /etc/rspamd/local.d
 COPY lua /etc/rspamd/lua
 COPY override.d /etc/rspamd/override.d
 
+EXPOSE 11334
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["/usr/bin/rspamd", "-f", "-u", "_rspamd", "-g", "_rspamd"]
